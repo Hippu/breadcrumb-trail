@@ -1,0 +1,15 @@
+{
+  "name": "frontend-hack",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "typescript": "^1.8.10",
+    "typings": "^1.3.2"
+  }
+}
