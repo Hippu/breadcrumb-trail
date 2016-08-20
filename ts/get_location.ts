@@ -1,3 +1,5 @@
+import * as map from "./map";
+
 export interface locationObject {
     latitude: number,
     longitude: number
@@ -15,6 +17,15 @@ export function getLocation(): Promise<locationObject> {
     })
     return location
 }
+
+function watchLocationCallback(position) {
+  let location = {latitude: position.coords.latitude, longitude: position.coords.longitude}
+  map.addMarker(location);
+  document.getElementById("result").innerHTML = JSON.stringify(position);
+  console.log(location);
+}
+
+navigator.geolocation.watchPosition(watchLocationCallback)
 
 getLocation().then(position => {
     document.getElementById("result").innerHTML = JSON.stringify(position);

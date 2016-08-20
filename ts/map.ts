@@ -1,7 +1,7 @@
 /// <reference path="../typings/globals/google.maps/index.d.ts"/>
 import * as loc from "./get_location";
 
-export var map = null;
+export var map: google.maps.Map;
 
 function initMap() {
     loc.getLocation().then(location => {
@@ -20,15 +20,17 @@ function initMap() {
     })
 }
 
-export function addMarker(location: loc.locationObject) {
-  if (map === null) {
-    console.log("map not initialized")
-  } else {
-    let marker = new google.maps.Marker({
-        position: new google.maps.LatLng(location.latitude, location.longitude),
-        map: map,
-    })
-  }
+export function addMarker(location: loc.locationObject){
+    if (map === undefined) {
+        console.log("map not initialized")
+    } else {
+        let position = new google.maps.LatLng(location.latitude, location.longitude)
+        let marker = new google.maps.Marker({
+            position: position,
+            map: map,
+        })
+        map.setCenter(position)
+    }
 }
 
 

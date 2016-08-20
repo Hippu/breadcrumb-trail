@@ -1,8 +1,29 @@
 @import "~normalize.css";
-
-html, body {
-  height: 100%
+body,
+html {
+    height: 100%;
 }
 #map {
-  height: 100%
+    height: 100%;
+    z-index: 1;
+}
+#ping {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 2;
+    background-color: rgb(152, 25, 25);
+    padding: 20px;
+    font-size: 24px;
+    color: white;
+    border: solid 5px white;
+    box-shadow: 10px 10px rgb(82, 82, 82);
+}
+.location {
+    position: fixed;
+    bottom: 8em;
+    margin: auto;
+    z-index: 2;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
 }
